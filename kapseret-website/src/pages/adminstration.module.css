@@ -1,0 +1,32 @@
+.admin_dashboard_container {
+  width: 100%;
+  padding-top: 3rem;
+  padding-bottom: 1rem;
+}
+
+.admin_dashboard_content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding: 0 1rem;
+}
+
+.admin_dashboard_header {
+  text-align: center;
+}
+
+.admin_dashboard_title {
+  font-size: 1.875rem;
+  font-weight: bold;
+  letter-spacing: -0.025em;
+  color: #008000;
+}
+
+.admin_dashboard_description {
+  max-width: 56.25rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #666;
+}

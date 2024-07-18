@@ -1,0 +1,116 @@
+/* kapseretSubcounty.css */
+
+.kapseret_subcounty {
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  color: #333;
+  background-color: #f7f7f7;
+}
+
+.kapseret_subcounty_title {
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+  margin-top: 10px;
+  color: #008000;
+}
+
+.kapseret_subcounty_header_container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.kapseret_subcounty_logo {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: #333;
+}
+
+.kapseret_subcounty_logo_icon {
+  width: 32px;
+  height: 32px;
+  margin-right: 0.5rem;
+}
+
+.kapseret_subcounty_nav {
+  display: flex;
+  gap: 1rem;
+}
+
+.kapseret_subcounty_nav_link {
+  text-decoration: none;
+  color: #333;
+  padding: 0.5rem;
+  transition: color 0.2s;
+}
+
+.kapseret_subcounty_nav_link--active,
+.kapseret_subcounty_nav_link:hover {
+  color: #007bff;
+}
+
+.kapseret_subcounty_menu_toggle {
+  display: none;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+}
+
+.kapseret_subcounty-menu-toggle-icon {
+  width: 24px;
+  height: 24px;
+}
+
+.kapseret_subcounty_main {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+.kapseret_subcounty_section {
+  margin-bottom: 3rem;
+}
+
+.kapseret_subcounty_section_content {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.kapseret_subcounty_title {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.kapseret_subcounty_description {
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.kapseret_subcounty_section_cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.kapseret_subcounty_card {
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
+  border-radius: 4px;
+  text-align: center;
+}
+
+.kapseret_subcounty_card_title {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: #008000;
+}
+
+.kapseret_subcounty_card_content {
+  font-size: 1.1rem;
+  line-height: 1.6;
+}

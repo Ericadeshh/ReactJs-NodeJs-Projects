@@ -1,0 +1,156 @@
+.header {
+  background-color: #008000;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+.headerLogo {
+  width: 150px;
+  height: 30px;
+}
+.headerTitle {
+  display: flex;
+  align-items: center;
+}
+.title {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-left: 1rem;
+  margin-top: 15px;
+}
+
+.subtitle {
+  font-size: 1.025rem;
+  color: yellow;
+}
+.navigationWrapper {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.navigation {
+  display: flex;
+  align-items: center;
+}
+
+.navLink {
+  color: white;
+  text-decoration: none;
+  font-size: 0.875rem;
+  padding: 0.5rem;
+  margin: 0 0.5rem;
+  font-weight: 600;
+  transition: color 0.3s;
+}
+
+.nav:hover {
+  content: "";
+  width: 0%;
+  height: 2px;
+  background: #e74707;
+  display: block;
+  margin: auto;
+  transition: 0.2s;
+}
+.navLink:hover::after {
+  width: 35px;
+}
+.mobileMenu {
+  display: none;
+  position: relative;
+}
+
+.mobileMenuButton {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.mobileMenuIcon {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 24px;
+  height: 18px;
+  margin-right: 10px;
+}
+
+.mobileMenuIcon span {
+  background-color: white;
+  height: 2px;
+  width: 100%;
+  transition: all 0.3s ease-in-out;
+}
+
+.mobileNavigation {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background-color: #96a004;
+  padding: 1rem;
+  display: flex;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  border-radius: 10px;
+}
+
+.mobileNavigation .navLink {
+  display: block;
+  width: 100%;
+  padding: 0.5rem 0;
+  color: white;
+  text-decoration: none;
+  margin-bottom: 0.5rem;
+}
+
+.mobileNavigation .navLink:hover {
+  text-decoration: underline;
+  color: black;
+}
+.mobileMenu:not(:hover) .mobileNavigation {
+  display: none;
+}
+@media (max-width: 1023px) {
+  .navigationWrapper {
+    display: none;
+  }
+
+  .mobileMenu {
+    display: block;
+  }
+
+  .mobileMenuOpen .navigationWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .mobileMenuOpen .navigation {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .mobileMenuOpen .navLink {
+    margin: 0.5rem 0;
+  }
+}
+
+/* Media query for mobile devices */
+@media only screen and (max-width: 767px) {
+  .title {
+    font-size: 1rem;
+  }
+  .headerLogo {
+    width: 100px;
+  }
+  .subtitle {
+    font-size: 0.9rem;
+  }
+}
