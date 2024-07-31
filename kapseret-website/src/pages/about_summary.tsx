@@ -3,7 +3,7 @@ import styles from "./AboutSummary.module.css";
 import Button from "../components/adminbtn";
 function AboutSummary() {
   return (
-    <div className={`${styles.container} alert alert-warning`}>
+    <div className={`${styles.container}`}>
       <h2 className={styles.title}>About Kapseret Subcounty</h2>
       <p className={styles.description}>
         Kapseret Subcounty is a local government administrative unit in Uasin
@@ -18,7 +18,7 @@ function AboutSummary() {
           Terms
         </Link>
       </div>
-      <Button text="More About Kapseret" link="about" />
+      <Button text="More About Kapseret" link="/about" />
     </div>
   );
 }

@@ -1,0 +1,199 @@
+.section {
+  width: 100%;
+  padding: 12px 0;
+  background-color: rgba(206, 206, 206, 0.6);
+  margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+  .section {
+    padding: 24px 0;
+  }
+}
+
+@media (min-width: 1024px) {
+  .section {
+    padding: 32px 0;
+  }
+}
+
+.container {
+  display: grid;
+  gap: 8px;
+  grid-template-columns: 1fr;
+  padding: 0 5px;
+}
+
+@media (min-width: 768px) {
+  .container {
+    padding: 0 5px;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+  }
+}
+
+.textContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.header {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #f0f9f0;
+  padding: 4px 12px;
+  border-radius: 9999px;
+  color: #1a7d1a;
+  font-weight: 500;
+}
+
+.title {
+  font-size: 2.25rem;
+  font-weight: 700;
+  color: #0a2540;
+  opacity: 0; /* Start with the title invisible */
+  animation: typewriter 2.5s steps(50) 1 forwards; /* Run the typewriter animation only once */
+  overflow: hidden; /* Hides the text until the animation starts */
+  white-space: nowrap; /* Prevents the text from wrapping */
+  display: inline-block; /* Use inline-block to center the text */
+}
+
+@keyframes typewriter {
+  0% {
+    width: 0;
+    opacity: 1;
+  }
+  100% {
+    width: 100%;
+    opacity: 1;
+  }
+}
+.description {
+  color: #4b5563;
+  max-width: 600px;
+  transform: translateX(-50px);
+  animation: fadeInLeft 2s ease forwards;
+}
+@keyframes fadeInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+.OHO {
+  font-weight: bold;
+  color: black;
+  background-color: #d3d600;
+  border-radius: 10px;
+  padding: 5px;
+}
+
+.buttonContainer {
+  display: flex;
+  gap: 16px;
+}
+
+.button {
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.primaryButton {
+  background-color: #1a7d1a;
+  color: white;
+}
+
+.primaryButton:hover {
+  background-color: #155d15;
+}
+
+.secondaryButton {
+  border: 1px solid #1a7d1a;
+  color: #1a7d1a;
+  background-color: transparent;
+}
+
+.secondaryButton:hover {
+  background-color: #f0f9f0;
+}
+
+/* Slider Styles */
+.sliderContainer {
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden; /* Hide overflow to show only one image at a time */
+  width: 300px; /* Match the width of images */
+  height: 250px; /* Match the height of images */
+}
+
+.slider {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.imageWrapper {
+  position: relative; /* For positioning overlay text */
+  min-width: 100%; /* Ensure only one image is visible */
+}
+
+.image {
+  width: 100%; /* Ensure image fills the container */
+  height: auto;
+  border-radius: 150px;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.3);
+  border: none;
+  filter: brightness(40%); /* Darker shade for the image */
+}
+
+.textOverlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* Center text */
+  width: 100%;
+  padding: 10px;
+  color: rgb(255, 255, 255, 0.99);
+  text-align: center;
+  border-radius: 10px;
+}
+
+.ohoText {
+  font-weight: bold;
+  font-size: 1.4rem;
+}
+
+.orgText {
+  font-size: 1rem;
+}
+
+@media (max-width: 768px) {
+  .title {
+    font-size: 1.2rem;
+    color: rgb(12, 60, 107);
+  }
+  .image {
+    max-width: 100%;
+  }
+  .textOverlay {
+    padding: 5px;
+  }
+  .ohoText {
+    font-size: 1.2rem;
+  }
+  .orgText {
+    font-size: 0.9rem;
+  }
+}
+
+.icon {
+  width: 20px;
+  height: 20px;
+}

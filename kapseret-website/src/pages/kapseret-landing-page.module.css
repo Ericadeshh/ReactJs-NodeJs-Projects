@@ -1,4 +1,4 @@
-.container {
+.containerX {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
@@ -16,4 +16,20 @@
 
 .subtitle {
   font-size: 1.025rem;
+}
+.summary {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  width: 100%;
+  padding: 20px;
+}
+
+@media (max-width: 768px) {
+  .summary {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 2rem;
+    width: 100%;
+  }
 }

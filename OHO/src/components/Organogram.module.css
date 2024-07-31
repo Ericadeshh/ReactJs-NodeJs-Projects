@@ -1,0 +1,68 @@
+.orgP {
+  width: 120px;
+  background-color: #d3d600;
+  font-weight: bold;
+  border-radius: 10px;
+  padding: 5px;
+  text-align: left;
+  margin: 10px;
+}
+.title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #0a2540;
+}
+.verticalLine {
+  left: 50%;
+  transform: translateX(-50%);
+  height: 100%;
+  width: 2px;
+  background-color: #ccc;
+}
+
+.childLine {
+  height: 50%;
+}
+
+.topLevel {
+  width: 150px;
+  margin: 10px 0;
+}
+
+.red {
+  background-color: #aa0808;
+}
+
+.orange {
+  background-color: #ffa500;
+}
+
+.yellow {
+  background-color: #4b4b21;
+}
+
+.green {
+  background-color: #008000;
+}
+
+.blue {
+  background-color: #0000ff;
+}
+
+.indigo {
+  background-color: #4b0082;
+}
+
+.violet {
+  background-color: #01928b;
+}
+
+.magenta {
+  background-color: #ff00ff;
+}
+@media (max-width: 768px) {
+  .title {
+    font-size: 1.6rem;
+    color: rgb(12, 60, 107);
+  }
+}

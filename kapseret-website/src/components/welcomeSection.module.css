@@ -1,31 +1,16 @@
 .welcome-section {
   width: 100%;
   height: 250px;
+  position: relative;
   padding-top: 12px;
   padding-bottom: 24px;
-  background: linear-gradient(rgba(4, 7, 30, 0.85), rgba(4, 9, 30, 0.8)),
-    url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQh47L2cwEaeKTtSDmjC6z_Fb3MyEKbM8lQA&s");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
+  overflow: hidden;
 }
 @media (min-width: 768px) {
   .welcome-section {
     padding-bottom: 32px;
   }
 }
-
-@media (min-width: 1024px) {
-  .welcome-section {
-    padding-bottom: 48px;
-  }
-}
-@media (min-width: 768px) {
-  .welcome-section {
-    padding-bottom: 32px;
-  }
-}
-
 @media (min-width: 1024px) {
   .welcome-section {
     padding-bottom: 48px;
@@ -38,6 +23,8 @@
   gap: 6px;
   padding-left: 16px;
   padding-right: 16px;
+  position: relative;
+  z-index: 2;
   @media (min-width: 768px) {
     grid-template-columns: repeat(2, 1fr);
     gap: 10px;
@@ -79,14 +66,16 @@
   font-family: Arial, Helvetica, sans-serif;
   line-height: 1.5;
   font-size: 15px;
-  color: white;
+  color: rgb(255, 255, 255, 0.7);
   @media (min-width: 1024px) {
     font-size: 16px;
   }
 }
+
 .span {
   color: #f3b10a;
 }
+
 .explore-link {
   text-decoration: none;
   display: inline-flex;
@@ -103,35 +92,40 @@
   box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
   transition: background-color 0.3s;
 }
-
 .explore-link:hover {
   background-color: #004d00; /* Darker shade of green */
 }
-
 .explore-link:focus-visible {
   outline: 2px solid #008000;
   outline-offset: 2px;
 }
-
 .explore-link:disabled {
   pointer-events: none;
   opacity: 0.5;
 }
 
-.image {
-  margin-left: auto;
-  margin-right: auto;
+.sliderContainer {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
-  max-width: 400px;
-  height: 300px;
+  height: 100%;
+  overflow: hidden;
+  z-index: 1;
+}
+.slider {
+  display: flex;
+  height: 100%;
+  transition: transform 0.5s ease-in-out;
+}
+.imageWrapper {
+  min-width: 100%;
+  height: 100%;
+}
+.image {
+  width: 100%;
+  height: 100%;
   object-fit: cover;
   object-position: center;
-  border-radius: 8px;
-  overflow: hidden;
-  @media (min-width: 640px) {
-    aspect-ratio: 3/2;
-  }
-  @media (min-width: 1024px) {
-    order: 2;
-  }
+  filter: brightness(30%);
 }

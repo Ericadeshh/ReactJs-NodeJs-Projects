@@ -1,0 +1,44 @@
+.supportDonationVolunteer {
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+.badge {
+  width: 120px;
+  background-color: #d3d600;
+  font-weight: bold;
+  border-radius: 10px;
+  padding: 5px;
+}
+.heading {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #0a2540;
+}
+.h2 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #008000;
+}
+.section {
+  margin: 20px 0;
+}
+
+.contactList {
+  list-style-type: none;
+  padding: 0;
+}
+
+.contactItem {
+  margin: 10px 0;
+}
+
+@media (max-width: 768px) {
+  .heading {
+    font-size: 1.5rem;
+    color: rgb(12, 60, 107);
+  }
+  .h2 {
+    font-size: 1.3rem;
+    color: #008000;
+  }
+}

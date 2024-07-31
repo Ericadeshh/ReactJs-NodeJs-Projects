@@ -8,7 +8,10 @@ function Footer() {
         <p className={styles.copyright}>
           &copy; 2024 Kapseret Subcounty Offices. All rights reserved.
         </p>
-        <p>Ericadeshh</p>
+        <a href="mailto:@ericadeshh@gmail.com" className={styles.mail}>
+          <i>ericadeshh@gmail.com</i>
+        </a>
+
         <nav className={styles.footerNav}>
           <Link to="/privacy" className={styles.footerLink}>
             Privacy Policy

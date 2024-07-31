@@ -1,0 +1,12 @@
+.dispOrg {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  width: 100%;
+}
+@media (max-width: 768px) {
+  .dispOrg {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 0.3rem;
+  }
+}

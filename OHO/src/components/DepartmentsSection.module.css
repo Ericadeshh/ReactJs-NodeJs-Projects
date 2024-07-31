@@ -1,0 +1,74 @@
+.main {
+  margin-top: 20px;
+}
+.cardMain {
+  background: linear-gradient(to right, #fff6e5, #f0f8ff);
+}
+.departmentsSection {
+  padding: 2rem;
+  background-color: #f8f9fa;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+  width: 100%;
+}
+.badge {
+  width: 60px;
+  background-color: #d3d600;
+  font-weight: bold;
+  border-radius: 10px;
+  padding: 5px;
+}
+.heading {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #0a2540;
+  text-align: center;
+}
+
+.card {
+  border: 1px solid #ddd;
+  border-radius: 0.5rem;
+}
+
+.card_title {
+  margin-top: 1rem;
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #124170;
+}
+
+.card_subtitle {
+  font-size: 1.2rem;
+  color: #6c757d;
+}
+
+.card_text {
+  font-size: 1.1rem;
+}
+
+.list_group_item {
+  border: none;
+}
+
+@media (max-width: 768px) {
+  .card {
+    margin: 0.5rem 0;
+  }
+  .departmentsSection {
+    padding: 2rem;
+    background-color: #f8f9fa;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 1rem;
+    width: 100%;
+  }
+  .heading {
+    font-size: 1.5rem;
+    color: rgb(12, 60, 107);
+  }
+  .card_title {
+    color: rgb(12, 60, 107);
+    font-size: 1.15rem;
+  }
+}

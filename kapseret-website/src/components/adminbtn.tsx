@@ -1,5 +1,6 @@
 import React from "react";
 import styles from "./button.module.css";
+import { Link } from "react-router-dom";
 
 interface ButtonProps {
   text: string;
@@ -7,20 +8,11 @@ interface ButtonProps {
 }
 
 const Button: React.FC<ButtonProps> = ({ text, link }) => {
-  const handleClick = (event: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
-    // Prevent the default click behavior
-    event.preventDefault();
-
-    // Redirect to the specified link
-    window.location.href = link;
-  };
-
   return (
-    <a
-      href={link}
+    <Link
+      to={link}
       className={styles.button}
       style={{ "--clr": "#bd8700" } as React.CSSProperties}
-      onClick={handleClick}
     >
       <span className={styles["button__icon-wrapper"]}>
         <svg
@@ -50,7 +42,7 @@ const Button: React.FC<ButtonProps> = ({ text, link }) => {
         </svg>
       </span>
       {text}
-    </a>
+    </Link>
   );
 };
 

@@ -1,0 +1,75 @@
+.footer {
+  padding: 20px 0px;
+  background-color: rgb(10, 37, 64);
+  border-top: 1px solid #dee2e6;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.footerSection {
+  display: flex;
+  flex-direction: column;
+}
+
+.footerSection h3 {
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+  color: rgb(255, 255, 255);
+}
+
+.footerLink {
+  display: block; /* Ensure each link is on a new line */
+  margin-bottom: 0.5rem;
+  color: #6c757d;
+}
+
+.footerLink:hover {
+  color: #d3d600;
+}
+.bottomFooter {
+  background-color: #252525;
+  color: white;
+  padding: 0.05rem 1.5rem;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.bottomFooter .copyright {
+  font-size: 0.85rem;
+  color: #dee2e6;
+}
+.bottomFooter p {
+  font-size: 0.85rem;
+  color: #d3d600;
+}
+.scrollToTopButton {
+  background-color: #d3d600;
+  border-radius: 10px;
+  margin: 10px;
+  border: none;
+  font-weight: bold;
+}
+@media (max-width: 768px) {
+  .footer {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    padding: 1.5rem 1.5rem; /* Adjust padding for smaller screens */
+  }
+
+  .footerSection {
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .footerSection h3 {
+    font-size: 1rem; /* Adjust font size for smaller screens */
+  }
+
+  .footerLink {
+    margin-bottom: 0.3rem; /* Reduce margin between links for smaller screens */
+    font-size: 0.75rem; /* Adjust link font size for smaller screens */
+  }
+}

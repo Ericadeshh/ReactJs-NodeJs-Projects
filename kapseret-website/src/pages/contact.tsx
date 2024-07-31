@@ -17,7 +17,9 @@ function Contact() {
           </div>
           <div>
             <h3 className={styles.contactTitle}>Phone</h3>
-            <p className={styles.contactText}>+254 712 345 678</p>
+            <a href="tel:+254741091661" className={styles.contactText}>
+              +254 7 4109 1661
+            </a>
           </div>
           <div>
             <h3 className={styles.contactTitle}>Email</h3>

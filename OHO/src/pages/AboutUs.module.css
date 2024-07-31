@@ -1,0 +1,81 @@
+.aboutUs {
+  background: rgb(179, 231, 119, 0.1);
+}
+.aboutUs h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #0a2540;
+}
+.container {
+  padding: 10px;
+}
+.container h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #0a2540;
+}
+.profile {
+  text-align: justify;
+  margin: 20px 0;
+}
+
+.programAreas {
+  list-style-type: none;
+  padding: 0;
+}
+
+.programAreas li {
+  margin: 5px 0;
+}
+
+.team {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.card {
+  flex: 0 0 calc(25% - 20px); /* Four cards per row with a small gap */
+  margin-bottom: 20px;
+  padding: 20px;
+}
+
+.img {
+  width: 100%;
+  height: auto;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center;
+  margin-bottom: 10px;
+}
+
+.names {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #0a2540;
+  margin: 0;
+}
+
+.role {
+  font-weight: bold;
+  color: #444;
+}
+
+@media (max-width: 768px) {
+  .aboutUs h1 {
+    font-size: 1.8rem;
+    color: rgb(14, 75, 136);
+  }
+  .card {
+    margin: 10px;
+    flex: 0 0 calc(100% - 20px); /* Two cards per row */
+  }
+  .img {
+    width: 100px;
+    height: auto;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center;
+    margin-bottom: 10px;
+  }
+}

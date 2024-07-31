@@ -1,0 +1,57 @@
+.services {
+  padding: 5rem 0;
+  background: rgba(243, 243, 243, 1);
+}
+.container h2 {
+  width: 300px;
+  font-size: 1.3rem;
+  background-color: #d3d600;
+  font-weight: bold;
+  border-radius: 10px;
+  padding: 5px;
+}
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.card {
+  flex: 0 0 calc(20% - 20px); /* Four cards per row with a small gap */
+  margin-bottom: 20px;
+  padding: 20px;
+}
+
+.serviceTitle {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.serviceDescription {
+  font-size: 1rem;
+  color: #555;
+}
+
+@media (max-width: 991px) {
+  .serviceTitle {
+    font-size: 1.2rem;
+    font-weight: bold;
+  }
+  .card {
+    flex: 0 0 calc(33.333% - 20px); /* Three cards per row on medium screens */
+  }
+}
+.container h2 {
+  width: 200px;
+  font-size: 1rem;
+  background-color: #d3d600;
+  font-weight: bold;
+  border-radius: 10px;
+  padding: 5px;
+}
+@media (max-width: 767px) {
+  .card {
+    flex: 0 0 100%; /* One card per row on small screens */
+  }
+}
