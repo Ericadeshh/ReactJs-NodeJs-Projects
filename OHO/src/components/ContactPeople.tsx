@@ -10,7 +10,7 @@ const ContactSlide = () => {
       </h2>
       <div className="container">
         <div className={styles.row}>
-          <div className={`${styles.card} alert alert-success`}>
+          <div className={`${styles.card} `}>
             <div className="d-flex align-items-center mb-3">
               <img
                 src="/Mary.jpg"
@@ -35,7 +35,7 @@ const ContactSlide = () => {
             </div>
           </div>
 
-          <div className={`${styles.card} alert alert-light`}>
+          <div className={`${styles.card} `}>
             <div className="d-flex align-items-center mb-3">
               <img
                 src="/Martin.jpg"
@@ -63,7 +63,7 @@ const ContactSlide = () => {
             </div>
           </div>
 
-          <div className={`${styles.card} alert alert-info`}>
+          <div className={`${styles.card} `}>
             <div className="d-flex align-items-center mb-3">
               <img
                 src="/MaleAfrican.avif"
@@ -87,7 +87,7 @@ const ContactSlide = () => {
             </div>
           </div>
 
-          <div className={`${styles.card} alert alert-warning`}>
+          <div className={`${styles.card} `}>
             <div className="d-flex align-items-center mb-3">
               <img
                 src="/MaleAfrican.avif"

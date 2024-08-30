@@ -20,27 +20,30 @@ const WelcomeSection = () => {
 
   return (
     <section className={styles.section}>
+      <span className={styles.HeaderTitle}>ORPHAN'S HOPE ORGANIZATION</span>
+      <div className={styles.overlay}></div>
+
       <div className={styles.container}>
-        <div className={`${styles.textContainer} `}>
+        <div className={styles.textContainer}>
           <div className={styles.header}>
+            <span className={styles.ribbon}>Juba-South Sudan</span>
             <HeartIcon className={styles.icon} />
-            <span>Orphan's Hope Organization</span>
           </div>
-          <h1 className={`${styles.title} `}>
+          <h1 className={styles.title}>
             Empowering Orphans, Transforming Lives
           </h1>
-          <p className={`${styles.description} alert alert-success`}>
-            <span className={`${styles.OHO}  `}>
-              Orphan’s Hope Organization , (OHO)
+          <p className={styles.description}>
+            <span className={styles.OHO}>
+              Orphan’s Hope Organization, (OHO)
             </span>{" "}
             was founded on 14th December 2019 in Juba-South Sudan. OHO is a
-            National, Non-governmental and Non-profit making Faith-Based
+            National, Non-governmental, and Non-profit making Faith-Based
             Organization which is legally registered under Relief and
             Rehabilitation Commission (RRC) in Juba with the Registration
             Number: 2646.
           </p>
           <div className={styles.buttonContainer}>
-            <Button text="Donate Here" link="/Support" color="#164574" />
+            <Button text="Donate" link="/Support" color="#164574" />
           </div>
         </div>
         <div className={styles.sliderContainer}>
@@ -53,8 +56,6 @@ const WelcomeSection = () => {
                 <div key={index} className={styles.imageWrapper}>
                   <img
                     src={image}
-                    width={300}
-                    height={250}
                     alt={`Slide ${index}`}
                     className={styles.image}
                   />
@@ -76,8 +77,8 @@ const HeartIcon = (props: React.SVGProps<SVGSVGElement>) => (
   <svg
     {...props}
     xmlns="http://www.w3.org/2000/svg"
-    width="24"
-    height="24"
+    width="10"
+    height="10"
     viewBox="0 0 24 24"
     fill="none"
     stroke="currentColor"

@@ -1,17 +1,9 @@
+/* DepartmentsSection.module.css */
 .main {
-  margin-top: 20px;
-}
-.cardMain {
-  background: linear-gradient(to right, #fff6e5, #f0f8ff);
-}
-.departmentsSection {
-  padding: 2rem;
+  padding: 20px;
   background-color: #f8f9fa;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 2rem;
-  width: 100%;
 }
+
 .badge {
   width: 60px;
   background-color: #d3d600;
@@ -19,56 +11,109 @@
   border-radius: 10px;
   padding: 5px;
 }
+
 .heading {
-  font-size: 2rem;
+  font-size: 1.5rem;
   font-weight: 700;
-  color: #0a2540;
+  color: #0e3a65;
   text-align: center;
 }
 
-.card {
-  border: 1px solid #ddd;
-  border-radius: 0.5rem;
+.departmentsSection {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.cardMain {
+  position: relative;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+  overflow: hidden;
+  transition: transform 0.3s ease-in-out;
+}
+
+.backgroundImage {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  opacity: 0.35;
+  filter: brightness(85%);
+  z-index: 0;
+}
+.cardMain:hover {
+  transform: scale(1.01);
+}
+.cardMain:hover .backgroundImage {
+  opacity: 0.4;
+}
+.cardHeader {
+  position: relative;
+  z-index: 1;
+  margin-bottom: 15px;
 }
 
 .card_title {
-  margin-top: 1rem;
-  font-size: 1.125rem;
-  font-weight: 600;
-  color: #124170;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #333;
+}
+
+.cardBody {
+  position: relative;
+  z-index: 1;
 }
 
 .card_subtitle {
-  font-size: 1.2rem;
-  color: #6c757d;
-}
-
-.card_text {
   font-size: 1.1rem;
+  font-weight: 500;
+  margin-bottom: 10px;
+  color: #007bff;
 }
 
-.list_group_item {
-  border: none;
+.list {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.list li {
+  margin-bottom: 5px;
+  font-size: 1rem;
+  color: #555;
 }
 
 @media (max-width: 768px) {
-  .card {
-    margin: 0.5rem 0;
-  }
-  .departmentsSection {
-    padding: 2rem;
-    background-color: #f8f9fa;
-    display: grid;
-    grid-template-columns: repeat(1, 1fr);
-    gap: 1rem;
-    width: 100%;
-  }
   .heading {
-    font-size: 1.5rem;
-    color: rgb(12, 60, 107);
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #0e3a65;
+    text-align: center;
   }
   .card_title {
-    color: rgb(12, 60, 107);
-    font-size: 1.15rem;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #333;
+  }
+  .card_subtitle {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: #007bff;
+  }
+  .departmentsSection {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 20px;
+  }
+  .list li {
+    margin-bottom: 5px;
+    font-size: 0.9rem;
+    color: #555;
   }
 }

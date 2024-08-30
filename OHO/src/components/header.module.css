@@ -2,12 +2,12 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 1rem;
   background-color: #ffffff;
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.1);
   position: relative;
   z-index: 2;
   width: 100%;
+  padding: 0 1rem; /* Added padding to ensure spacing around the header content */
 }
 
 .logoContainer {
@@ -23,264 +23,106 @@
   color: #333333;
   font-size: 1.5rem;
   font-weight: bold;
+  margin: 10px 0; /* Adjusted margin for vertical alignment */
 }
 
 .LogoPic {
-  width: 80px;
-  height: 50px;
+  width: 50px;
+  height: 30px;
   margin-right: 10px;
 }
 
-.HeaderTitle {
-  color: rgb(15, 59, 104);
-  font-weight: 700;
+.linkX img {
+  width: 22px;
+  height: 22px;
 }
 
 .menuButton {
-  display: none;
   background: none;
   border: none;
-  font-size: 1.5rem;
+  cursor: pointer;
+  display: block;
+}
+
+.menuButton svg {
+  width: 24px;
+  height: 24px;
+}
+
+/* Mobile menu */
+.mobileMenu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(21, 53, 37, 0.9);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  transform: translateX(100%);
+  transition: transform 0.5s ease-in-out;
+}
+
+.mobileMenu.open {
+  transform: translateX(0);
+}
+
+.closeButton {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: none;
+  border: none;
+  color: rgb(255, 255, 255, 0.9);
   cursor: pointer;
 }
 
-.navigation {
+.mobileMenu .navigation {
   display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.navList {
+.mobileMenu .navList {
   display: flex;
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
 }
 
-.link {
+.mobileMenu .link {
+  color: #fff;
+  font-size: 1.5rem;
+  margin: 1rem 0; /* Adjusted spacing between links */
   text-decoration: none;
-  color: #333;
-  padding: 0.5rem 1rem;
-  transition: color 0.3s ease;
+  border-radius: 15px;
+  padding: 0.1rem 1rem; /* Added padding for better click area and spacing */
+  transition: background-color 0.3s, color 0.3s;
 }
 
-.link:hover {
-  color: #1e81eb;
+.mobileMenu .link:hover {
+  color: rgb(14, 214, 114);
+  background-color: rgba(0, 0, 0, 0.2);
+  font-size: 1.475rem;
 }
 
-/* Media queries for smaller screens */
-@media (max-width: 768px) {
-  .header {
-    padding: 1rem;
-    flex-direction: row;
-    align-items: center;
-  }
-
+@media (max-width: 769px) {
   .HeaderTitle {
-    color: rgb(15, 59, 104);
-    font-weight: 700;
-    font-size: 1rem;
+    font-size: 1.1rem;
   }
+}
 
-  .logo {
-    font-size: 1.2rem;
+/* Adjustments for larger screens */
+@media (min-width: 769px) {
+  .navigation {
+    display: flex;
+    align-items: center; /* Ensure items are centered vertically in the header */
   }
 
   .menuButton {
-    display: block;
-    margin-left: auto; /* Aligns menuButton to the right */
-  }
-
-  .navigation {
-    display: none;
-  }
-
-  .navList li {
-    padding: 10%;
-  }
-
-  .mobileMenu {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(21, 53, 37, 0.9);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    z-index: 1000;
-    transform: translateX(100%);
-    animation: slideIn 0.5s ease-in-out forwards;
-  }
-
-  @keyframes slideIn {
-    0% {
-      transform: translateX(100%);
-    }
-    100% {
-      transform: translateX(0);
-    }
-  }
-
-  .mobileMenu .menuHide {
-    animation: slideOut 0.5s ease-in-out backwards;
-  }
-
-  @keyframes slideOut {
-    0% {
-      transform: translateX(0);
-    }
-    100% {
-      transform: translateX(10%);
-    }
-  }
-
-  .closeButton {
-    position: absolute;
-    top: 1rem;
-    right: 1rem;
-    background: none;
-    border: none;
-    color: #fff;
-    font-size: 1.5rem;
-    cursor: pointer;
-    background-color: rgb(51, 51, 51, 0.9);
-    margin: 5px;
-    padding: 0 10px;
-    border-radius: 100%;
-  }
-
-  .mobileMenu .navigation {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .mobileMenu .navList {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .mobileMenu .link {
-    color: #fff;
-    font-size: 1.5rem;
-    margin: 1rem 0;
-    padding: 0.5rem 1rem;
-  }
-
-  .mobileMenu .link:hover {
-    color: rgb(14, 214, 114);
-    border-radius: 15px;
-    padding: 10px;
-    background-color: rgba(255, 255, 255, 0.1);
-  }
-}
-
-@media (min-width: 768px) {
-  .header {
-    padding: 1rem;
-    flex-direction: row;
-    align-items: center;
-  }
-
-  .HeaderTitle {
-    color: rgb(15, 59, 104);
-    font-weight: 700;
-    font-size: 1rem;
-  }
-
-  .logo {
-    font-size: 1.2rem;
-  }
-
-  .menuButton {
-    display: block;
-    margin-left: auto; /* Aligns menuButton to the right */
-  }
-
-  .navigation {
-    display: none;
-  }
-
-  .navList li {
-    padding: 10%;
-  }
-
-  .mobileMenu {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(21, 53, 37, 0.9);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    z-index: 1000;
-    transform: translateX(100%);
-    animation: slideIn 0.5s ease-in-out forwards;
-  }
-
-  @keyframes slideIn {
-    0% {
-      transform: translateX(100%);
-    }
-    100% {
-      transform: translateX(0);
-    }
-  }
-
-  .mobileMenu .menuHide {
-    animation: slideOut 0.5s ease-in-out backwards;
-  }
-
-  @keyframes slideOut {
-    0% {
-      transform: translateX(0);
-    }
-    100% {
-      transform: translateX(10%);
-    }
-  }
-
-  .closeButton {
-    position: absolute;
-    top: 1rem;
-    right: 1rem;
-    background: none;
-    border: none;
-    color: #fff;
-    background-color: rgb(51, 51, 51, 0.9);
-    margin: 5px;
-    padding: 0 10px;
-    border-radius: 100%;
-    font-size: 1.5rem;
-    cursor: pointer;
-  }
-
-  .mobileMenu .navigation {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .mobileMenu .navList {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .mobileMenu .link {
-    color: #fff;
-    font-size: 1.5rem;
-    margin: 1rem 0;
-    padding: 0.5rem 1rem;
-  }
-
-  .mobileMenu .link:hover {
-    color: #007bff;
-    border-radius: 15px;
-    padding: 10px;
-    background-color: rgba(255, 255, 255, 0.1);
+    display: block; /* Ensure menuButton is visible in full screen */
   }
 }

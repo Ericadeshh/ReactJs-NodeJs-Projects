@@ -5,21 +5,19 @@ import { Link } from "react-router-dom";
 interface FooterLinkProps
   extends React.AnchorHTMLAttributes<HTMLAnchorElement> {
   link: string;
-  disableNavigation?: boolean; // Add a prop to disable navigation
+  disableNavigation?: boolean;
 }
 
 const FooterLink: React.FC<FooterLinkProps> = ({
   link,
   children,
-  disableNavigation = false, // Default to false
+  disableNavigation = false,
   ...props
 }) => {
   const handleClick = (event: React.MouseEvent<HTMLAnchorElement>) => {
     if (disableNavigation) {
-      event.preventDefault(); // Prevent default behavior only if disableNavigation is true
+      event.preventDefault();
     }
-    // You can add any specific behavior you want here.
-    // For now, it prevents the default action (navigation/reload) conditionally.
   };
 
   return (
@@ -36,11 +34,13 @@ const FooterLink: React.FC<FooterLinkProps> = ({
 
 interface FooterSectionProps {
   title: string;
-  links: { href: string; label: string; disableNavigation?: boolean }[]; // Add disableNavigation prop here
+  links: { href: string; label: string; disableNavigation?: boolean }[];
 }
 
 const FooterSection: React.FC<FooterSectionProps> = ({ title, links }) => (
-  <div className={`${styles.footerSection}`}>
+  <div
+    className={`${styles.footerSection} ${styles.animateOnScroll} ${styles.slideInLeft}`}
+  >
     <h3>{title}</h3>
     {links.map((link) => (
       <FooterLink
@@ -59,6 +59,17 @@ const Footer: React.FC = () => {
 
   useEffect(() => {
     const handleScroll = () => {
+      const elements = document.querySelectorAll(`.${styles.animateOnScroll}`);
+      elements.forEach((element) => {
+        const rect = element.getBoundingClientRect();
+        const windowHeight =
+          window.innerHeight || document.documentElement.clientHeight;
+
+        if (rect.top <= windowHeight * 0.9) {
+          element.classList.add(styles.visible);
+        }
+      });
+
       if (window.scrollY > 200) {
         setShowScrollButton(true);
       } else {
@@ -67,7 +78,11 @@ const Footer: React.FC = () => {
     };
 
     window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    handleScroll();
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
   }, []);
 
   const scrollToTop = () => {
@@ -107,7 +122,7 @@ const Footer: React.FC = () => {
         <FooterSection
           title="Legal"
           links={[
-            { href: "", label: "Privacy Policy", disableNavigation: true }, // Disable navigation for these links
+            { href: "", label: "Privacy Policy", disableNavigation: true },
             { href: "", label: "Terms of Service", disableNavigation: true },
             { href: "", label: "Cookie Policy", disableNavigation: true },
           ]}
@@ -124,14 +139,13 @@ const Footer: React.FC = () => {
           links={[
             { href: "/Support", label: "Donate" },
             { href: "/Support", label: "Volunteer" },
-            { href: "/Support", label: "Conctact Us" },
+            { href: "/Support", label: "Contact Us" },
           ]}
         />
       </footer>
       <div className={styles.bottomFooter}>
         <p className={styles.copyright}>
           &copy;2024.Orphans Hope Org. All rights reserved.
-          {/* Scroll to top button */}
           {showScrollButton && (
             <button className={styles.scrollToTopButton} onClick={scrollToTop}>
               Go Up

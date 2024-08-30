@@ -1,11 +1,39 @@
+import { useEffect, useRef } from "react";
 import styles from "./contact.module.css";
+
 function Contact() {
+  const sectionRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const elements = sectionRef.current?.querySelectorAll(`.${styles.card}`);
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add(styles.animate);
+            observer.unobserve(entry.target);
+          }
+        });
+      });
+
+      elements?.forEach((element) => observer.observe(element));
+    };
+
+    handleScroll();
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
     <section className={`${styles.contact} alert alert-success`}>
       <div className={styles.container}>
         <h2 className={styles.sectionTitle}>Contact Us</h2>
-        <div className={styles.contactGrid}>
-          <div>
+        <div className={styles.contactGrid} ref={sectionRef}>
+          <div className={`${styles.card} ${styles.address}`}>
             <h3 className={styles.contactTitle}>Address</h3>
             <p className={styles.contactText}>
               Orphans Hope Organization
@@ -16,7 +44,7 @@ function Contact() {
             </p>
           </div>
 
-          <div>
+          <div className={`${styles.card} ${styles.workingHours}`}>
             <h3 className={styles.contactTitle}>Working Hours</h3>
             <p className={styles.contactText}>
               Monday - Friday: 8:00 AM - 5:00 PM
@@ -25,7 +53,7 @@ function Contact() {
             </p>
           </div>
 
-          <div>
+          <div className={`${styles.card} ${styles.email}`}>
             <h3 className={styles.contactTitle}>Email</h3>
             <p className={styles.contactText}>
               <span className={styles.name}> Mary Adut Gop</span>{" "}
@@ -39,7 +67,7 @@ function Contact() {
             </p>
           </div>
 
-          <div>
+          <div className={`${styles.card} ${styles.phone}`}>
             <h3 className={styles.contactTitle}>Phone</h3>
             <p className={styles.contactText}>
               <span className={styles.name}> Mary Adut Gop</span>{" "}

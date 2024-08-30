@@ -9,7 +9,7 @@ const Services = () => {
         </h2>
         <div className={styles.row}>
           {servicesList.map((service, index) => (
-            <div key={index} className={`${styles.card} alert alert-primary`}>
+            <div key={index} className={`${styles.card} alert alert-success`}>
               <h5 className={styles.serviceTitle}>{service.title}</h5>
               <p className={styles.serviceDescription}>{service.description}</p>
             </div>

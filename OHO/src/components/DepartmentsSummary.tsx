@@ -2,7 +2,7 @@ import styles from "../pages/Summary.module.css";
 import Button from "./Button";
 function DepartmentsSummary() {
   return (
-    <div className={`${styles.DisciplinesDiv}  `}>
+    <div className={styles.DisciplinesDiv}>
       <p className={styles.Disciplines}>Departments</p>
       <div className={styles.disp_summary}>
         <h2>OHO's Departments</h2>

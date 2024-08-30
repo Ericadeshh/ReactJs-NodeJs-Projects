@@ -7,26 +7,25 @@
   text-align: left;
   margin: 10px;
 }
+
 .title {
   font-size: 2rem;
   font-weight: 700;
   color: #0a2540;
 }
-.verticalLine {
-  left: 50%;
-  transform: translateX(-50%);
-  height: 100%;
-  width: 2px;
-  background-color: #ccc;
-}
 
-.childLine {
-  height: 50%;
-}
-
+/* Animation styles */
 .topLevel {
   width: 150px;
   margin: 10px 0;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: transform 0.5s ease-out, opacity 0.5s ease-out;
+}
+
+.topLevel.animate {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .red {
@@ -60,6 +59,19 @@
 .magenta {
   background-color: #ff00ff;
 }
+
+.verticalLine {
+  left: 50%;
+  transform: translateX(-50%);
+  height: 100%;
+  width: 2px;
+  background-color: #ccc;
+}
+
+.childLine {
+  height: 50%;
+}
+
 @media (max-width: 768px) {
   .title {
     font-size: 1.6rem;

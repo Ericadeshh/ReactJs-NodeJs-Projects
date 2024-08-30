@@ -1,10 +1,42 @@
+import { useEffect, useRef } from "react";
 import styles from "./Organogram.module.css";
 
 export default function Organogram() {
+  const sectionRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const elements = sectionRef.current?.querySelectorAll(
+        `.${styles.topLevel}`
+      );
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add(styles.animate);
+            observer.unobserve(entry.target);
+          }
+        });
+      });
+
+      elements?.forEach((element) => observer.observe(element));
+    };
+
+    handleScroll();
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
     <>
       <p className={styles.orgP}>Organogram</p>
-      <div className="d-flex flex-column align-items-center my-4">
+      <div
+        className="d-flex flex-column align-items-center my-4"
+        ref={sectionRef}
+      >
         <h2 className={styles.title}>Organisation Organogram</h2>
         <div
           className={`${styles.topLevel} ${styles.red} text-white border border-secondary rounded p-2 position-relative`}

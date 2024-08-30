@@ -15,7 +15,7 @@
   font-weight: bold;
   border-radius: 10px;
   padding: 5px;
-  font-size: 1.2rem;
+  font-size: 1rem;
 }
 .details {
   padding-left: 20px;
@@ -30,15 +30,16 @@
   flex-direction: column;
 }
 .img {
-  width: 120px;
-  height: 120px;
+  width: 100px;
+  height: 100px;
   border-radius: 50%;
+  box-shadow: 5px 5px 10px rgba(160, 160, 160, 0.5);
   object-fit: cover;
   object-position: center;
   margin-right: 10px;
 }
 .names {
-  font-size: 1.5rem;
+  font-size: 1.1rem;
   font-weight: 700;
   color: #0a2540;
   margin: 0px;
@@ -48,17 +49,17 @@
     grid-template-columns: repeat(auto-fit, minmax(300px, 5fr));
   }
   .testimonialTitle {
-    font-size: 1.1rem;
+    font-size: 1rem;
   }
   .testimonialText {
     font-size: 0.8em;
   }
   .img {
-    width: 90px;
-    height: 90px;
+    width: 80px;
+    height: 80px;
   }
   .names {
-    font-size: 1.2rem;
+    font-size: 1rem;
     color: rgb(13, 73, 133);
   }
 }

@@ -48,6 +48,18 @@
   font-size: 1.025rem;
 }
 
+/* Animation styles */
+.card {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: transform 0.5s ease-out, opacity 0.5s ease-out;
+}
+
+.card.animate {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 @media (max-width: 767px) {
   .contact {
     padding: 2rem 1rem;

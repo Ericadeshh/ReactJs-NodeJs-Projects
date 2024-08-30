@@ -1,22 +1,30 @@
 .aboutUs {
-  background: rgb(179, 231, 119, 0.1);
+  background: rgba(179, 231, 119, 0.1);
 }
+
 .aboutUs h1 {
   font-size: 2rem;
   font-weight: 700;
   color: #0a2540;
 }
+
 .container {
   padding: 10px;
 }
+
 .container h3 {
-  font-size: 1.5rem;
+  font-size: 1rem;
   font-weight: 700;
   color: #0a2540;
 }
+
 .profile {
   text-align: justify;
-  margin: 20px 0;
+  margin: 20px auto;
+}
+
+.names {
+  font-size: 1rem;
 }
 
 .programAreas {
@@ -29,28 +37,25 @@
 }
 
 .team {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
 }
 
 .card {
-  flex: 0 0 calc(25% - 20px); /* Four cards per row with a small gap */
-  margin-bottom: 20px;
-  padding: 20px;
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 10px;
+  padding: 10px;
 }
 
 .img {
-  width: 100%;
-  height: auto;
-  border-radius: 50%;
-  object-fit: cover;
-  object-position: center;
-  margin-bottom: 10px;
+  width: 100px;
+  height: 100px;
+  border-radius: 100%;
 }
 
 .names {
-  font-size: 1.5rem;
+  font-size: 1rem;
   font-weight: 700;
   color: #0a2540;
   margin: 0;
@@ -61,21 +66,56 @@
   color: #444;
 }
 
+/* Scroll animation */
+.animated {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Slide in from different directions */
+.slideInFromLeft {
+  transform: translateX(-20px);
+}
+
+.slideInFromRight {
+  transform: translateX(20px);
+}
+
+.slideInFromBottom {
+  transform: translateY(20px);
+}
+
+.visible.slideInFromLeft,
+.visible.slideInFromRight,
+.visible.slideInFromBottom {
+  transform: translateX(0) translateY(0);
+}
+
 @media (max-width: 768px) {
   .aboutUs h1 {
-    font-size: 1.8rem;
+    font-size: 1.5rem;
     color: rgb(14, 75, 136);
   }
-  .card {
-    margin: 10px;
-    flex: 0 0 calc(100% - 20px); /* Two cards per row */
+
+  .team {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
   }
+
+  .names {
+    font-size: 1rem;
+  }
+
   .img {
     width: 100px;
-    height: auto;
-    border-radius: 50%;
-    object-fit: cover;
-    object-position: center;
-    margin-bottom: 10px;
+    height: 100px;
+    border-radius: 100%;
+    margin: 5px;
   }
 }

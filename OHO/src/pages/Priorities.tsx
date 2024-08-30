@@ -1,7 +1,39 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import styles from "./Priorities.module.css"; // Import CSS module styles
 
 export default function Priorities() {
+  const cardsRef = useRef<HTMLDivElement[]>([]);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const options = {
+        threshold: 0.1, // Trigger animation when 10% of the element is visible
+      };
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add(styles.slideIn);
+          } else {
+            entry.target.classList.remove(styles.slideIn);
+          }
+        });
+      }, options);
+
+      cardsRef.current.forEach((card) => observer.observe(card));
+
+      return () => {
+        cardsRef.current.forEach((card) => observer.unobserve(card));
+      };
+    };
+
+    handleScroll();
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
     <section className={styles.section}>
       <div className={styles.container}>
@@ -17,87 +49,103 @@ export default function Priorities() {
           </p>
         </div>
         <div className={styles.grid}>
-          <div className={`${styles.card} ${styles.cardBlue}`}>
+          <div
+            ref={(el) => el && cardsRef.current.push(el)}
+            className={`${styles.card} ${styles.cardBlue}`}
+          >
             <SmileIcon className={`${styles.icon} ${styles.green}`} />
             <h3 className={styles.cardTitle}>Peace Building</h3>
             <p className={styles.cardDescription}>
-              OHO will advocate and promote peace building in the Communities.
-            </p>
-          </div>
-          <div className={`${styles.card} ${styles.cardOrange}`}>
-            <CurrencyIcon className={`${styles.icon} ${styles.orange}`} />
-            <h3 className={styles.cardTitle}>Microfinance</h3>
-            <p className={styles.cardDescription}>
-              To create responsiveness on the role of micro-finance institutions
-              in economic growth and development.
-            </p>
-          </div>
-          <div className={`${styles.card} ${styles.cardGrey}`}>
-            <FlagIcon className={`${styles.icon} ${styles.purple}`} />
-            <h3 className={styles.cardTitle}>Forums</h3>
-            <p className={styles.cardDescription}>
-              To organize forums for discussions, symposium, seminars, and
-              workshops on contemporary macro-economic challenges and
-              imbalances.
-            </p>
-          </div>
-          <div className={`${styles.card} ${styles.cardPink}`}>
-            <BabyIcon className={`${styles.icon} ${styles.red}`} />
-            <h3 className={styles.cardTitle}>Child Rights</h3>
-            <p className={styles.cardDescription}>
-              Advocates for child rights which mainly dwells on growth of the
-              child both physically and mentally, their level of participation
-              within the families and community, right to life and association
-              among others. OHO works to strongly encourage child rights;
-              promote youth and girl child participation in all issues of
-              national and international developments
-            </p>
-          </div>
-          <div className={`${styles.card} ${styles.cardBlue}`}>
-            <LeafIcon className={`${styles.icon} ${styles.green}`} />
-            <h3 className={styles.cardTitle}>Sustainable Agriculture</h3>
-            <p className={styles.cardDescription}>
-              Improves and encourages sustainable agriculture and rural
-              development, a long–term strategy for increasing food production
-              and food security while conserving and managing natural resources.
-            </p>
-          </div>
-          <div className={`${styles.card} ${styles.cardOrange}`}>
-            <SchoolIcon className={`${styles.icon} ${styles.orange}`} />
-            <h3 className={styles.cardTitle}>Quality Education</h3>
-            <p className={styles.cardDescription}>
-              Increasing access to education, with a focus on girl-child
-              education.
+              OHO promotes and advocates for peace-building in local communities
+              to ensure lasting harmony and development.
             </p>
           </div>
           <div
+            ref={(el) => el && cardsRef.current.push(el)}
+            className={`${styles.card} ${styles.cardOrange}`}
+          >
+            <CurrencyIcon className={`${styles.icon} ${styles.orange}`} />
+            <h3 className={styles.cardTitle}>Microfinance</h3>
+            <p className={styles.cardDescription}>
+              We enhance understanding of microfinance’s role in driving
+              economic growth and development across regions.
+            </p>
+          </div>
+          <div
+            ref={(el) => el && cardsRef.current.push(el)}
+            className={`${styles.card} ${styles.cardGrey}`}
+          >
+            <FlagIcon className={`${styles.icon} ${styles.purple}`} />
+            <h3 className={styles.cardTitle}>Forums</h3>
+            <p className={styles.cardDescription}>
+              Organizing forums, seminars, and workshops to address contemporary
+              macro-economic challenges and imbalances.
+            </p>
+          </div>
+          <div
+            ref={(el) => el && cardsRef.current.push(el)}
+            className={`${styles.card} ${styles.cardPink}`}
+          >
+            <BabyIcon className={`${styles.icon} ${styles.red}`} />
+            <h3 className={styles.cardTitle}>Child Rights</h3>
+            <p className={styles.cardDescription}>
+              We advocate for children's rights, focusing on their physical and
+              mental growth, participation, and protection.
+            </p>
+          </div>
+          <div
+            ref={(el) => el && cardsRef.current.push(el)}
+            className={`${styles.card} ${styles.cardBlue}`}
+          >
+            <LeafIcon className={`${styles.icon} ${styles.green}`} />
+            <h3 className={styles.cardTitle}>Sustainable Agriculture</h3>
+            <p className={styles.cardDescription}>
+              OHO promotes sustainable agriculture as a key strategy to improve
+              food security and conserve natural resources.
+            </p>
+          </div>
+          <div
+            ref={(el) => el && cardsRef.current.push(el)}
+            className={`${styles.card} ${styles.cardOrange}`}
+          >
+            <SchoolIcon className={`${styles.icon} ${styles.orange}`} />
+            <h3 className={styles.cardTitle}>Quality Education</h3>
+            <p className={styles.cardDescription}>
+              Expanding access to quality education, with a strong focus on
+              ensuring education for the girl child.
+            </p>
+          </div>
+          <div
+            ref={(el) => el && cardsRef.current.push(el)}
             className={`${styles.card} ${styles.cardGrey} ${styles.colSpan2}`}
           >
             <EqualIcon className={`${styles.icon} ${styles.purple}`} />
             <h3 className={styles.cardTitle}>Women Empowerment</h3>
             <p className={styles.cardDescription}>
-              Empowers women and girls in promoting gender equality and equity
-              in resources distribution.
+              Empowering women and girls to promote gender equality and equity
+              in all aspects of life.
             </p>
           </div>
           <div
+            ref={(el) => el && cardsRef.current.push(el)}
             className={`${styles.card} ${styles.cardBlue} ${styles.colSpan1}`}
           >
             <RecycleIcon className={`${styles.icon} ${styles.blue}`} />
             <h3 className={styles.cardTitle}>Sustainable Development</h3>
             <p className={styles.cardDescription}>
-              Meeting the needs of present and future generations through
-              sustainable practices.
+              Committing to sustainable practices to meet the needs of both
+              present and future generations.
             </p>
           </div>
           <div
+            ref={(el) => el && cardsRef.current.push(el)}
             className={`${styles.card} ${styles.cardPink} ${styles.colSpan2}`}
           >
             <BabyIcon className={`${styles.icon} ${styles.red}`} />
             <h3 className={styles.cardTitle}>Youth Participation</h3>
             <p className={styles.cardDescription}>
-              Encouraging child rights and youth/girl-child participation in
-              national and international developments.
+              Encouraging active participation of youth and girls in both
+              national and international developmental issues.
             </p>
           </div>
         </div>
@@ -105,6 +153,8 @@ export default function Priorities() {
     </section>
   );
 }
+
+// SVG Icon Components (same as before)
 
 // SVG Icon Components (same as before)
 

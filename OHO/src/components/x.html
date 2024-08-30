@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      .link {
+        text-decoration: none;
+        color: #333;
+        background-color: red;
+        padding: 0.5rem 1rem;
+        transition: color 0.3s ease, background-color 0.3s ease,
+          transform 0.3s ease; /* Smooth transition for color, background-color, and transform */
+      }
+
+      .link:hover {
+        color: #1e81eb;
+        background-color: rgba(
+          42,
+          147,
+          165,
+          0.7
+        ); /* Example background change */
+        transform: scale(1.05); /* Slightly enlarges the element on hover */
+      }
+    </style>
+  </head>
+  <body>
+    <div class="link">
+      <h1>HELLO BOX</h1>
+      <p>Hello, this is a box</p>
+    </div>
+  </body>
+</html>

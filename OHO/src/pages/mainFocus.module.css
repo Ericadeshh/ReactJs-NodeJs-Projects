@@ -5,6 +5,7 @@
   padding: 2rem 0rem;
   background-color: rgba(48, 92, 4, 0.1);
 }
+
 .container {
   max-width: 300px;
   width: 100%;
@@ -37,6 +38,7 @@
 .textContent h4 {
   font-weight: bold;
   color: #0a2540;
+  font-size: 1.1rem;
 }
 
 .icon {
@@ -51,11 +53,9 @@
 .greenIcon {
   color: #4caf50;
 }
-
 .blueIcon {
   color: #2196f3;
 }
-
 .yellowIcon {
   color: #ffc107;
 }
@@ -75,6 +75,7 @@
 .description {
   max-width: 100%;
   color: #666;
+  font-size: 0.9rem !important;
 }
 
 .listItem {
@@ -89,30 +90,97 @@
   gap: 0.5rem;
   padding: 1rem 0;
 }
+
 .fundingSource {
   max-width: 300px;
   width: 100%;
   margin: 5px;
 }
+
 .OpAreas {
   margin: 5px;
   max-width: 300px;
   width: 100%;
+  font-size: 0.85rem;
 }
+
 .fundingSource h4 {
   color: #0a2540;
   margin-top: 20px;
   font-weight: bold;
+  font-size: 1.1rem;
 }
+
 .fundingSource p {
   max-width: 100%;
+  font-size: 0.85rem;
 }
+
 .OpAreas h4 {
   margin-top: 20px;
   color: #0a2540;
   font-weight: bold;
+  font-size: 1.1rem;
 }
-@media (max-width: 640px) {
+
+/* New styles for animations */
+@keyframes slideInLeft {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInBottom {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.hidden {
+  opacity: 0;
+  transform: translateY(50px);
+}
+
+.visible {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.slideInLeft {
+  animation: slideInLeft 1s ease-out forwards;
+}
+
+.slideInRight {
+  animation: slideInRight 1s ease-out forwards;
+}
+
+.slideInBottom {
+  animation: slideInBottom 1s ease-out forwards;
+}
+
+@media (max-width: 768px) {
   .container {
     max-width: 100%;
   }
@@ -131,13 +199,11 @@
     color: rgb(13, 73, 133);
   }
   .description {
-    font-size: 1.25rem;
+    font-size: 0.5rem;
   }
-
   .listItem {
-    font-size: 1rem;
+    font-size: 0.8rem;
   }
-
   .grid {
     flex-direction: row;
     gap: 4rem;
@@ -145,10 +211,13 @@
   .section {
     padding: 1.5rem 1.5rem;
   }
-  .fundingSource h3 {
-    color: rgb(13, 73, 133);
+  .textContent h4 {
+    font-size: 1rem;
   }
-  .OpAreas h3 {
-    color: rgb(13, 73, 133);
+  .fundingSource h4 {
+    font-size: 1rem;
+  }
+  .OpAreas h4 {
+    font-size: 1rem;
   }
 }

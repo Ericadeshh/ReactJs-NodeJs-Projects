@@ -1,12 +1,51 @@
-.dispOrg {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1rem;
-  width: 100%;
+.map {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 }
+.map div {
+  flex: 50 0 calc(50% - 50%);
+}
+.carouselContainer {
+  position: relative;
+  overflow: hidden;
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.carousel {
+  width: 100%;
+  max-width: 800px;
+}
+
+.animatedSection {
+  opacity: 0;
+  transform: translateY(50px); /* Start by moving the section downwards */
+  transition: opacity 1s ease-out, transform 1s ease-out; /* Adjust the timing as needed */
+}
+
+.animatedSection.show {
+  opacity: 1;
+  transform: translateY(0); /* Slide the section into place */
+}
+
 @media (max-width: 768px) {
-  .dispOrg {
-    grid-template-columns: repeat(1, 1fr);
-    gap: 0.3rem;
+  .animatedSection {
+    transform: translateY(30px); /* Smaller movement for mobile */
+  }
+}
+
+@media (max-width: 768px) {
+  .map {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+  }
+  .map div {
+    flex: 0 0 calc(100%);
   }
 }
